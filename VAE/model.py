@@ -1,4 +1,14 @@
+import torch
 from torch import nn
+
+if torch.cuda.is_available():
+        device = torch.device('cuda')
+elif torch.backends.mps.is_available() and torch.backends.mps.is_built():
+        device = torch.device('mps')
+else:
+        device = torch.device('cpu')
+
+
 class VAE_FC(nn.Module):
     def __init__(self, layers, latent_dim = 200, leak = .1):
         super(VAE_FC, self).__init__()

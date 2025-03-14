@@ -1,4 +1,4 @@
-def train_model_vae(data_loader, model, criterion, optimizer, nepochs):
+def train_model_vae(data_loader, model, criterion, optimizer, nepochs, device):
     #List to store loss to visualize
     train_losses = []
     train_acc = []
